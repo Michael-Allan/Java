@@ -1,0 +1,18 @@
+Installation instructions for the Java programming project
+
+   \ The immediately following instructions are only for projects with buildable software.
+    + Ensure Makeshift is installed.
+        : see http://reluk.ca/project/building/Makeshift/
+    + Install the files of the present project.
+        >+ cd *COMMAND-DIRECTORY*/
+            / The command directory is where project installations are accessible by their proper paths.
+              The present project, for example, will shortly be accessible at `Java/`.
+                : see `^^command directory$` @ http://reluk.ca/project/building/lexicon.brec
+        >+ git clone http://reluk.ca/var/repo/git/Java.git Java
+    + Build the software.
+        >+ build Java class_files
+        : see http://reluk.ca/project/building/Makeshift/build_instructions.brec
+
+
+
+                                                         \ Copyright © 2020  Michael Allan.  Licence MIT.
