@@ -1,0 +1,85 @@
+#!/usr/bin/env --split-string=${JDK_HOME}/bin/java @Java/java_arguments \c [SS]
+package Java; // [AFN]
+
+// This command runs directly from the present source file, which is uncompiled during builds.
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import static java.util.logging.Level.*;
+
+
+/** A shell command to issue test messages to a runtime event logger.
+  *
+  *     @see <a href='http://reluk.ca/project/Java/bin/test-logging.brec'>The `test-logging` command</a>
+  */
+public final class LoggingTestCommand { // [AFN]
+
+
+
+    private LoggingTestCommand( final String loggerName ) { logger = Logger.getLogger( loggerName ); }
+
+
+
+    /** Takes a `test-logging` command from the shell and executes it.
+      */
+    public static void main( final String[] arguments ) {
+        if( arguments.length != 1 ) abortWithUsage();
+        final String a = arguments[0];
+        if( a.startsWith( "-" )) abortWithUsage(); // Allowing e.g. for a deliberate `-?`.
+        new LoggingTestCommand( a ).execute(); }
+
+
+
+////  P r i v a t e  ////////////////////////////////////////////////////////////////////////////////////
+
+
+    private static void abortWithUsage() {
+        System.err.println( "Usage: build <logger-name>" );
+        System.exit( 1 ); }
+
+
+    /** Executes the command.
+      */
+    private void execute() {
+        logger.log( OFF, """
+          Logging at levels `OFF`, `SEVERE`, `WARNING`, `INFO`, \
+          `CONFIG`, `FINE`, `FINER`, `FINEST` and `ALL`:""" );
+        test( OFF );
+        test( SEVERE );
+        test( WARNING );
+        test( INFO );
+        test( CONFIG );
+        test( FINE );
+        test( FINER );
+        test( FINEST );
+        test( ALL ); }
+
+
+
+    private final Logger logger;
+
+
+
+    /** Logs a test message at the given level.
+      */
+    private void test( final Level level ) {
+        logger.log( level, "Testing at level " + level.toString() ); }}
+
+
+
+// NOTES
+// ─────
+//   AFN  Atypical file naming is allowed here.  ‘The compiler does not enforce the optional restriction
+//        defined at the end of JLS §7.6, that a type in a named package should exist in a file whose
+//        name is composed from the type name followed by the .java extension.’
+//        http://openjdk.java.net/jeps/330
+//        https://docs.oracle.com/javase/specs/jls/se15/html/jls-7.html#jls-7.6
+//
+//   SS · Here the long form `--split-string` (as opposed to `-S`) enables Emacs to recognize this file
+//        as Java source code.  See the note apropos of ‘source-launch files encoded with a shebang’ at
+//        `http://reluk.ca/project/Java/Emacs/jmt-mode.el`.
+
+
+
+                                                        // Copyright © 2020  Michael Allan.  Licence MIT.
