@@ -11,7 +11,7 @@ Installation instructions for the Java programming project
             >+ git clone http://reluk.ca/var/repo/git/Java.git Java
         3+ Build the software.
             : see http://reluk.ca/project/building/Makeshift/bin/build.brec
-            >+ build Java class_files
+            >+ build Java class-files
         4+ Test your access to the `test-logging` command.
             >+ Java/bin/test-logging -?
                 / ⇒  Usage: test-logging <logger-name>
