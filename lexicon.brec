@@ -1,0 +1,12 @@
+Definition of terms for the Java programming project
+
+    : see also http://reluk.ca/project/wayic/refractory/index.brec
+
+    thread safe
+        ─ adjective
+            - (of an action) Giving rise to no concurrency fault.
+            - (of an object) Allowing only thread safe actions.
+
+
+
+                                                         \ Copyright © 2020  Michael Allan.  Licence MIT.
