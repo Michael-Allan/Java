@@ -1,7 +1,7 @@
 #!/usr/bin/env --split-string=${JDK_HOME}/bin/java @Java/java_arguments \c [SS]
 package Java; // [AFN]
 
-// This command runs directly from the present source file, which is uncompiled during builds.
+// This command runs directly from the present source file, it needs no compiling.
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -63,8 +63,7 @@ public final class LoggingTestCommand { // [AFN]
 
     /** Logs a test message at the given level.
       */
-    private void test( final Level level ) {
-        logger.log( level, "Testing at level " + level.toString() ); }}
+    private void test( final Level level ) { logger.log( level, () -> "Testing at level " + level ); }}
 
 
 

@@ -22,7 +22,7 @@ public final class Collections {
       *     @see java.util.Iterator#forEachRemaining(java.util.function.Consumer)
       */
     public static <K,V> void forEachRemaining​( final Iterator<Map.Entry<K,V>> iterator,
-          final  BiConsumer<? super K, ? super V> action) {
+          final  BiConsumer<? super K, ? super V> action ) {
         iterator.forEachRemaining( pair -> { action.accept( pair.getKey(), pair.getValue() ); });}}
 
 
