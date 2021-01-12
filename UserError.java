@@ -6,7 +6,13 @@ package Java;
 public class UserError extends Exception {
 
 
+    public UserError() {}
+
+
+
+    /** @see #getMessage()
+      */
     public UserError( String message ) { super( message ); }}
 
 
-                                                        // Copyright © 2020  Michael Allan.  Licence MIT.
+                                                   // Copyright © 2020-2021  Michael Allan.  Licence MIT.

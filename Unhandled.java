@@ -6,7 +6,9 @@ package Java;
 public class Unhandled extends RuntimeException {
 
 
+    /** @see #getCause()
+      */
     public Unhandled( Throwable cause ) { super( cause ); }}
 
 
-                                                        // Copyright © 2020  Michael Allan.  Licence MIT.
+                                                   // Copyright © 2020-2021  Michael Allan.  Licence MIT.

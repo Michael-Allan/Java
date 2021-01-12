@@ -11,7 +11,9 @@ package Java;
 public class UnsourcedInterrupt extends Unhandled {
 
 
+    /** @see #getCause()
+      */
     public UnsourcedInterrupt( InterruptedException cause ) { super( cause ); }}
 
 
-                                                        // Copyright © 2020  Michael Allan.  Licence MIT.
+                                                   // Copyright © 2020-2021  Michael Allan.  Licence MIT.
