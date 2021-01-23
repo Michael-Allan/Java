@@ -23,8 +23,8 @@ public final class Collections {
       */
     public static <K,V> void forEachRemaining​( final Iterator<Map.Entry<K,V>> iterator,
           final  BiConsumer<? super K, ? super V> action ) {
-        iterator.forEachRemaining( pair -> { action.accept( pair.getKey(), pair.getValue() ); });}}
+        iterator.forEachRemaining( pair -> action.accept( pair.getKey(), pair.getValue() ));}}
 
 
 
-                                                        // Copyright © 2020  Michael Allan.  Licence MIT.
+                                                   // Copyright © 2020-2021  Michael Allan.  Licence MIT.
