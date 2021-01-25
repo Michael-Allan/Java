@@ -35,7 +35,7 @@ public final class Files {
 
 
 
-    /** Tells whether directory `d` is empty.  The result is indeterminate if `d` is not a directory.
+    /** Whether directory `d` is empty.  The result is indeterminate if `d` is not a directory.
       */
     public static boolean isDirectoryEmpty​( final Path d ) throws IOException {
         try( final DirectoryStream<Path> dS = newDirectoryStream​( d )) {
@@ -52,4 +52,4 @@ public final class Files {
 
 
 
-                                                        // Copyright © 2020  Michael Allan.  Licence MIT.
+                                                   // Copyright © 2020-2021  Michael Allan.  Licence MIT.
