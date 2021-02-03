@@ -14,16 +14,17 @@ public final class Collections {
 
 
 
-    /** Performs the given action for each remaining key-value pair of the iterator until all pairs
-      * have been processed or the action throws an exception.
+    /** Performs the given action for each remaining key-value pair of the iterator until all pairs have
+      * been processed or the action throws an exception.  Use this method for iterations that require
+      * access to the iterator; otherwise use `Map.{@linkplain Map#forEach(BiConsumer) forEach}`.
       *
       *     @param <K> The type of map key.
       *     @param <V> The type of mapped value.
-      *     @see java.util.Iterator#forEachRemaining(java.util.function.Consumer)
+      *     @see Iterator#forEachRemaining(java.util.function.Consumer)
       */
     public static <K,V> void forEachRemaining​( final Iterator<Map.Entry<K,V>> iterator,
           final  BiConsumer<? super K, ? super V> action ) {
-        iterator.forEachRemaining( pair -> action.accept( pair.getKey(), pair.getValue() ));}}
+        iterator.forEachRemaining( entry -> action.accept( entry.getKey(), entry.getValue() ));}}
 
 
 
