@@ -15,4 +15,5 @@ public class UserError extends Exception {
     public UserError( String message ) { super( message ); }}
 
 
+
                                                    // Copyright © 2020-2021  Michael Allan.  Licence MIT.
