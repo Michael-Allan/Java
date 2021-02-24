@@ -45,7 +45,9 @@ public class ArrayCharSequence implements DelimitableCharSequence {
    // ━━━  C h a r   S e q u e n c e  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 
-    public final @Override char charAt( final int c ) { return array[start + c]; }
+    public final @Override char charAt( final int c ) {
+        if( c < 0 || c >= length ) throw new IndexOutOfBoundsException();
+        return array[start + c]; }
 
 
 

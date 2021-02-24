@@ -25,7 +25,9 @@ public final class BufferCharSequence implements DelimitableCharSequence {
    // ━━━  C h a r   S e q u e n c e  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 
-    public @Override char charAt( final int c ) { return buffer.get( start + c ); }
+    public @Override char charAt( final int c ) {
+        if( c < 0 || c >= length ) throw new IndexOutOfBoundsException();
+        return buffer.get( start + c ); }
 
 
 
