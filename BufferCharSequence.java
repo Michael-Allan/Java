@@ -38,7 +38,7 @@ public final class BufferCharSequence implements DelimitableCharSequence {
     public @Override CharSequence subSequence( final int start, final int end ) {
         if( start < 0 || end > length() || end < start ) throw new IndexOutOfBoundsException/*sic*/();
         return new StringBuilder().append( this, start, end ).toString(); }
-          // Pending a use case for returning (and documenting) a `BufferCharSequence`.
+          // Pending a use case for returning (and describing) a `BufferCharSequence`.
 
 
 

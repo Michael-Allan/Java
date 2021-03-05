@@ -58,7 +58,7 @@ public class ArrayCharSequence implements DelimitableCharSequence {
     public @Override CharSequence subSequence( final int start, final int end ) {
         if( start < 0 || end > length || end < start ) throw new IndexOutOfBoundsException(); // Per API.
         return new String( array, this.start + start, end - start ); } /* Pending a use case for
-          returning (and documenting) an `ArrayCharSequence`.  Cf. `CharBuffers.OffsetArrayCS`. */
+          returning (and describing) an `ArrayCharSequence`.  Cf. `CharBuffers.OffsetArrayCS`. */
 
 
 

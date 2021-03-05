@@ -27,7 +27,7 @@ public final class LoggingTestCommand { // [AFN]
         if( arguments.length != 1 ) abortWithUsage();
         final String a = arguments[0];
         if( a.startsWith( "-" )) abortWithUsage(); // Allowing e.g. for a deliberate `-?`.
-        new LoggingTestCommand( a ).execute(); }
+        new LoggingTestCommand( a ).run(); }
 
 
 
@@ -39,9 +39,12 @@ public final class LoggingTestCommand { // [AFN]
         System.exit( 1 ); }
 
 
-    /** Executes the command.
-      */
-    private void execute() {
+
+    private final Logger logger;
+
+
+
+    private void run() {
         logger.log( OFF, """
           Logging at levels `OFF`, `SEVERE`, `WARNING`, `INFO`, \
           `CONFIG`, `FINE`, `FINER`, `FINEST` and `ALL`:""" );
@@ -54,10 +57,6 @@ public final class LoggingTestCommand { // [AFN]
         test( FINER );
         test( FINEST );
         test( ALL ); }
-
-
-
-    private final Logger logger;
 
 
 
@@ -81,4 +80,4 @@ public final class LoggingTestCommand { // [AFN]
 
 
 
-                                                        // Copyright © 2020  Michael Allan.  Licence MIT.
+                                                   // Copyright © 2020-2021  Michael Allan.  Licence MIT.
