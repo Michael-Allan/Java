@@ -42,10 +42,6 @@ public final class BufferCharSequence implements DelimitableCharSequence {
 
 
 
-    public @Override String toString() { return new StringBuilder(this).toString(); }
-
-
-
    // ━━━  D e l i m i t a b l e   C h a r   S e q u e n c e  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 
@@ -68,6 +64,13 @@ public final class BufferCharSequence implements DelimitableCharSequence {
 
 
     public @Override int start() { return start; }
+
+
+
+   // ━━━  O b j e c t  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+    public @Override String toString() { return new StringBuilder(this).toString(); }
 
 
 

@@ -62,10 +62,6 @@ public class ArrayCharSequence implements DelimitableCharSequence {
 
 
 
-    public final @Override String toString() { return new String( array, start, length ); }
-
-
-
    // ━━━  D e l i m i t a b l e   C h a r   S e q u e n c e  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 
@@ -92,6 +88,13 @@ public class ArrayCharSequence implements DelimitableCharSequence {
 
 
     public @Override int start() { return start; }
+
+
+
+   // ━━━  O b j e c t  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+    public final @Override String toString() { return new String( array, start, length ); }
 
 
 
