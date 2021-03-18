@@ -18,30 +18,6 @@ public class ArrayCharSequence implements DelimitableCharSequence {
 
 
 
-    /** Sets the end boundary.
-      */
-    protected void end( int e ) { end = e; }
-
-
-
-    /** Sets the boundaries by calling `{@linkplain #start(int) start}` and `{@linkplain #end(int) end}`.
-      *
-      *     @throws IndexOutOfBoundsException If `start` is negative, or `end` exceeds the length
-      *       of the backing array.
-      */
-    protected void set( final int start, final int end ) {
-        if( start < 0 || end > array.length ) throw new IndexOutOfBoundsException();
-        start( start );
-        end( end ); }
-
-
-
-    /** Sets the start boundary.
-      */
-    protected void start( int s ) { start = s; }
-
-
-
    // ━━━  C h a r   S e q u e n c e  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 
@@ -105,11 +81,36 @@ public class ArrayCharSequence implements DelimitableCharSequence {
 
 
 
+    /** Sets the end boundary.
+      */
+    void end( int e ) { end = e; }
+
+
+
     private int length;
 
 
 
-    private int start; }
+    /** Sets the boundaries by calling `{@linkplain #start(int) start}` and `{@linkplain #end(int) end}`.
+      *
+      *     @throws IndexOutOfBoundsException If `start` is negative, or `end` exceeds the length
+      *       of the backing array.
+      */
+    void set( final int start, final int end ) {
+        if( start < 0 || end > array.length ) throw new IndexOutOfBoundsException();
+        start( start );
+        end( end ); }
+
+
+
+    private int start;
+
+
+
+    /** Sets the start boundary.
+      */
+    void start( int s ) { start = s; }}
+
 
 
                                                         // Copyright © 2021  Michael Allan.  Licence MIT.

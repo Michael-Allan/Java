@@ -63,7 +63,7 @@ public final class CharBuffers {
         /** @see #buffer
           * @see #array
           */
-        private ArrayCS( CharBuffer buffer, char[] array ) {
+        ArrayCS( CharBuffer buffer, char[] array ) {
             super( array );
             this.buffer = buffer; }
 
@@ -80,7 +80,7 @@ public final class CharBuffers {
 
         /** @throws IndexOutOfBoundsException If `start` is negative, or `end` exceeds the buffer limit.
           */
-        protected final @Override void set( final int start, final int end ) {
+        final @Override void set( final int start, final int end ) {
             // Changing what follows?  Sync → `BufferCharSequence`.
             if( start < 0 || end > buffer.limit() ) throw new IndexOutOfBoundsException();
             start( start );
@@ -115,12 +115,12 @@ public final class CharBuffers {
        // ━━━  A r r a y   C h a r   S e q u e n c e  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 
-        protected @Override void end( int end ) { super.end( end + arrayStart ); }
+        @Override void end( int end ) { super.end( end + arrayStart ); }
           // Resolving to an absolute array index.
 
 
 
-        protected @Override void start( int start ) { super.start( start + arrayStart ); }
+        @Override void start( int start ) { super.start( start + arrayStart ); }
           // Resolving to an absolute array index.
 
 
