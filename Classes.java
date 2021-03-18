@@ -12,7 +12,7 @@ public final class Classes {
 
     /** Returns `cl.getName` stripped of any leading package qualifier.
       */
-    public static String nameWithoutPackageLeader( final Class cl ) {
+    public static String nameWithoutPackageLeader( final Class<?> cl ) {
         String name = cl.getName();
         if( !cl.isArray() ) { // Then a package qualifier might lead the name.
             final int strip = cl.getPackageName().length();
