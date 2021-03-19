@@ -1,0 +1,116 @@
+Editorial guidelines
+
+    - These are the guidelines I follow in the Java source files I maintain.
+
+    collection → array
+
+           X[] array = collection.toArray( new X[ collection.size() ]);
+         
+           X[] array = new X[ collection.size() ];
+           collection.toArray( array )
+
+    configuration
+        / End user configuration of programs.
+        | arguments
+            - The user configures a shell command by its arguments.
+        | environment variables
+            - The user configures the program by setting environment variables in the OS shell.
+        | file
+            / Where the user can be assumed technically proficient enough to install a JDK.
+            - The user configures the program with a file written in Java source.
+            - Automatically the file is compiled or recompiled and the code reflectively loaded.
+        | copying and editing
+            / Where the user can be assumed technically proficient enough to install a JDK.
+            - The user configures the program by copying its source-launch entry command
+              up path and editing it.
+            - Explicitly minimize the code in the entry command to minimize exposure of copies
+              to upstream revisions.
+
+    indentation style
+        - Relegate to line ends symbolic boilerplate such as braces.
+            ∵ There it is less likely to distract the reader.
+            ∵ There it is less likely to obscure structural cues such as indentation and keywording.
+            ∵ It carries little meaning to a human reader.
+
+    logging
+
+           logger.fine( () -> "Concatenation or " + otherCostlyOperation() );
+         
+           if( logger.isLoggable(FINE) && costlyTest() ) logger.log( FINE, message );
+
+    member
+        / Member of a class or other type.
+        division
+            - Declare members in two separate divisions.
+            1. Members of the general API.
+                - The general API comprises all members whose accessibility equals or exceeds that of
+                  the containing type, excluding any described or tagged otherwise.
+                    : see https://docs.oracle.com/javase/specs/jls/se15/html/jls-6.html#jls-6.6
+            2. Private members.
+                - All others.
+        implicit modifiers
+            - Omit the effective `final` of private methods.
+                : see https://docs.oracle.com/javase/specs/jls/se15/html/jls-8.html#jls-8.4.3.3
+            - Omit the implicit `final` modifier of an enum type.
+                / Better not advertise the strange case of non-final enum types — sending the programmer
+                  in search of his language manual — when essentially the modifier is meaningless here.
+            - Omit the implicit `abstract` modifier of an interface.
+            - Omit any implicit `abstract` modifier of an interface member.
+            - Omit any member modifier made implicit by a separate modifier made explicit.
+                / E.g. by an explicit `strictfp` on an interface.
+            - Omit no other implicit or effective modifier.
+                / For consistency and clarity, especially as not all members of an interface
+                  are necessarily public these days.
+
+    shebangs
+        - Re the form of shebang in source-launch shell commands.
+            : re `shebang` see http://openjdk.java.net/jeps/330#Shebang_files
+            : re `source-launch` see
+              https://docs.oracle.com/en/java/javase/15/docs/specs/man/java.html#using-source-file-mode-to-launch-single-file-source-code-programs
+            : re `source-launch shell commands` see http://reluk.ca/project/building/Makeshift/bin/
+        - A shebang might use `-S` instead of `--split-string`, but only with caveats.
+            : see `source-launch files encoded with a shebang\.$` @ `NOTES$`
+              @ http://reluk.ca/project/work/Java/Emacs/jmt-mode.el
+        - Rather than depending on the value of `JDK_HOME`, the shebang might depend instead
+          on inclusion of the JDK `bin` directory in the `PATH`:
+
+                 #!/usr/bin/env --split-string=java --source <version>
+
+            - But typical JDK installations set `JDK_HOME`.
+
+    shell commands
+        - Coded as source-launch Java files each with a shebang.
+            : see https://docs.oracle.com/en/java/javase/15/docs/specs/man/java.html#using-source-file-mode-to-launch-single-file-source-code-programs
+            : see http://openjdk.java.net/jeps/330#Shebang_files
+            - In most cases this is merely a convenience, enabling rapid tests during development.
+            - Makeshift’s `build` command, however, depends on source launch to enable
+              the full bootstrapping of its build process.
+                : re `\`build\` command` see http://reluk.ca/project/building/Makeshift/bin/build
+        working directory
+            - Presently the shell commands of this and other projects require that the working directory
+              be set to the command directory.
+                - The command directory is where project installations are accessible by their
+                  proper paths.  The present project, for example, would be accessible at `Java/`.
+                    : see `^^command directory$` @ http://reluk.ca/project/lexicon.brec
+                    \ Keep this lexical reiteration, instructions for basic commands refer here.
+            - The dependency is located in the shebang, specifically its references to argument files
+              such as `java_arguments`, each formed as a relative path.
+            - The underlying problem is that the `java` command resolves relative paths in relation to
+              the user’s working directory.
+                / This would come as no surprise if, as usual, the command were issued from
+                  the command line interface.  It comes as a surprise only because here the command
+                  is issued from a shebang, where the naive expectation is for paths to be resolved
+                  in relation to the enclosing file.
+            - Other possible solutions:
+                / All being too heavy, I think, for a narrow, localized problem.
+                | Require the user to record the path of the command directory
+                  in an environment variable.
+                    - Using that variable, the paths would (after expansion by `env`) become absolute.
+                | Form the shell commands as Bash scripts that each in turn forms a `java` call to effect
+                  the command.
+                    - A Bash script can, of course, resolve the path relative to its own location.
+                | Omit the argument files.
+                    - Clarity would suffer: one could no longer comment on a particular argument in line.
+
+
+                                                    \ Copyright © 2019-2021  Michael Allan.  Licence MIT.
