@@ -23,6 +23,15 @@ public interface DelimitableCharSequence extends CharSequence {
 
 
 
+    /** Delimits this sequence to `other.start` and `other.end`.
+      *
+      *     @see delimit(int,int)
+      */
+    public default void delimitAs( final DelimitableCharSequence other ) {
+        delimit( other.start(), other.end() ); }
+
+
+
     /** Extends this sequence across `length` characters from `start`,
       * yielding an end boundary of `start + length`.
       *
