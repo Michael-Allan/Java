@@ -2,13 +2,6 @@ Editorial guidelines
 
     - These are the guidelines I follow in the Java source files I maintain.
 
-    collection → array
-
-           X[] array = collection.toArray( new X[ collection.size() ]);
-         
-           X[] array = new X[ collection.size() ];
-           collection.toArray( array )
-
     configuration
         / End user configuration of programs.
         | arguments
