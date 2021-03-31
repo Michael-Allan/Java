@@ -25,6 +25,12 @@ Editorial guidelines
             ∵ There it is less likely to obscure structural cues such as indentation and keywording.
             ∵ It carries little meaning to a human reader.
 
+    Javadoc pseudo-tags
+        • paramImplied  *resource-name*  *description*
+            - Telling of a resource taken as an input parameter, though not formally declared as such.
+        • uses  *resource-name*  *description*
+            - Telling of a resource used, typically a shared resource liable to contention.
+
     logging
 
            logger.fine( () -> "Concatenation or " + otherCostlyOperation() );
