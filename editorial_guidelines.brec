@@ -38,13 +38,16 @@ Editorial guidelines
     member
         / Member of a class or other type.
         division
+            / Divisions of a Java source file separated by horizontal dividers formed as comments.
             - Declare members in two separate divisions.
-            1. Members of the general API.
+            1. Principal initializers and members of the general API.
                 - The general API comprises all members whose accessibility equals or exceeds that of
                   the containing type, excluding any described or tagged otherwise.
                     : see https://docs.oracle.com/javase/specs/jls/se15/html/jls-6.html#jls-6.6
+                - Principal initializers include class contructors and initialization methods that must
+                  be called before class use, regardless of accessibility (`public`, `private`, etc.).
             2. Private members.
-                - All others.
+                - All others, regardless of whether they actually have `private` accessibility.
         implicit modifiers
             - Omit the effective `final` of private methods.
                 : see https://docs.oracle.com/javase/specs/jls/se15/html/jls-8.html#jls-8.4.3.3
