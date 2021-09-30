@@ -23,7 +23,7 @@ public class RangedArrayList<E> extends ArrayList<E> {
    // ━━━  A b s t r a c t   L i s t  ━━━  A r r a y    L i s t  ━━━━━━━━━━━━━━━━━━━━━━
 
 
-    public @Override final void removeRange( int fromIndex, int toIndex ) {
+    public final @Override void removeRange( int fromIndex, int toIndex ) {
         super.removeRange( fromIndex, toIndex ); }}
 
 
