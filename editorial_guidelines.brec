@@ -66,7 +66,7 @@ Editorial guidelines
         - Re the form of shebang in source-launch shell commands.
             : re `shebang` see http://openjdk.java.net/jeps/330#Shebang_files
             : re `source-launch` see
-              https://docs.oracle.com/en/java/javase/15/docs/specs/man/java.html#using-source-file-mode-to-launch-single-file-source-code-programs
+              https://docs.oracle.com/en/java/javase/17/docs/specs/man/java.html#using-source-file-mode-to-launch-single-file-source-code-programs
             : re `source-launch shell commands` see http://reluk.ca/project/building/Makeshift/bin/
         - A shebang might use `-S` instead of `--split-string`, but only with caveats.
             : see `source-launch files encoded with a shebang\.$` @ `NOTES$`
@@ -80,7 +80,7 @@ Editorial guidelines
 
     shell commands
         - Coded as source-launch Java files each with a shebang.
-            : see https://docs.oracle.com/en/java/javase/15/docs/specs/man/java.html#using-source-file-mode-to-launch-single-file-source-code-programs
+            : see https://docs.oracle.com/en/java/javase/17/docs/specs/man/java.html#using-source-file-mode-to-launch-single-file-source-code-programs
             : see http://openjdk.java.net/jeps/330#Shebang_files
             - In most cases this is merely a convenience, enabling rapid tests during development.
             - Makeshift’s `build` command, however, depends on source launch to enable
