@@ -34,7 +34,7 @@ public final class URIs {
         if( u.getFragment() != null ) {
             try { u = new URI( u.getScheme(), u.getSchemeSpecificPart(), /*fragment*/null ); } /* Using
               the decoded getters, not the raw ones.  For authority on this usage, see API § Identity.
-              https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/net/URI.html */
+              https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/net/URI.html */
             catch( URISyntaxException x ) { throw new Unhandled( x ); }}
               // Unexpected for a mere reconstruction.
         return u; }}

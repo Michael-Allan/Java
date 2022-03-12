@@ -5,7 +5,7 @@
     - The `test-logging` command sends to the named logger a series of test messages,
       one for each of the standard logging levels predefined by Java.
         : re `standard logging levels` see
-          https://docs.oracle.com/en/java/javase/15/docs/api/java.logging/java/util/logging/Level.html
+          https://docs.oracle.com/en/java/javase/17/docs/api/java.logging/java/util/logging/Level.html
     - The working directory must be the command directory.
         : see `^^working directory$` @ `^^shell commands$`
           @ http://reluk.ca/project/Java/notepad.brec
