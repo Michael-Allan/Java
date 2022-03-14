@@ -69,8 +69,8 @@ Editorial guidelines
               https://docs.oracle.com/en/java/javase/17/docs/specs/man/java.html#using-source-file-mode-to-launch-single-file-source-code-programs
             : re `source-launch shell commands` see http://reluk.ca/project/building/Makeshift/bin/
         - A shebang might use `-S` instead of `--split-string`, but only with caveats.
-            : see `source-launch files encoded with a shebang\.$` @ `NOTES$`
-              @ http://reluk.ca/project/work/Java/Emacs/jmt-mode.el
+            : see `source-launch files encoded with a shebang\.$` @ `NOTES$` @
+              http://reluk.ca/project/work/Java/Emacs/jmt-mode.el
         - Rather than depending on the value of `JDK_HOME`, the shebang might depend instead
           on inclusion of the JDK `bin` directory in the `PATH`:
 
