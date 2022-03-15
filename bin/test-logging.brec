@@ -7,8 +7,8 @@
         : re `standard logging levels` see
           https://docs.oracle.com/en/java/javase/17/docs/api/java.logging/java/util/logging/Level.html
     - The working directory must be the command directory.
-        : see `^^working directory$` @ `^^shell commands$`
-          @ http://reluk.ca/project/Java/notepad.brec
+        : see `^^working directory$` @ `^^shell commands$` @
+          http://reluk.ca/project/Java/notepad.brec
     - Usually the `logger-name` argument will name the proper package of a software project,
       or possibly a subpackage of it.
         / The proper package of a project is the Java package that identifies it.
