@@ -49,8 +49,8 @@ Editorial guidelines
             2. Private members.
                 - All others, regardless of whether they actually have `private` accessibility.
         implicit modifiers
-            - Omit the effective `final` of private methods.
-                : see https://docs.oracle.com/javase/specs/jls/se15/html/jls-8.html#jls-8.4.3.3
+            - Omit the effective `final` of private methods and of methods immediate to a final class.
+                : see https://docs.oracle.com/javase/specs/jls/se17/html/jls-8.html#jls-8.4.3.3
             - Omit the implicit `final` modifier of an enum type.
                 / Better not advertise the strange case of non-final enum types — sending the programmer
                   in search of his language manual — when essentially the modifier is meaningless here.
