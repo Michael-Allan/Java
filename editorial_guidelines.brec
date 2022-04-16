@@ -2,22 +2,27 @@ Editorial guidelines
 
     - These are the guidelines I follow in the Java source files I maintain.
 
-    configuration
-        / End user configuration of programs.
-        | arguments
-            - The user configures a shell command by its arguments.
-        | environment variables
-            - The user configures the program by setting environment variables in the OS shell.
-        | file
-            / Where the user can be assumed technically proficient enough to install a JDK.
-            - The user configures the program with a file written in Java source.
-            - Automatically the file is compiled or recompiled and the code reflectively loaded.
-        | copying and editing
-            / Where the user can be assumed technically proficient enough to install a JDK.
+    configuration, end user, of programs
+        / The configuration methods herein are ordered from most to least natural
+          for a technically proficient user, natural meaning facile yet powerful.
+        • copying and editing
             - The user configures the program by copying its source-launch entry command
               up path and editing it.
+                / Where the user is assumedly technically proficient enough to install a JDK.
             - Explicitly minimize the code in the entry command to minimize exposure of copies
               to upstream revisions.
+        • Java file, or other procedural file
+            - The user configures the program procedurally with a file written in Java source.
+                / Where the user is assumedly technically proficient enough to install a JDK.
+            - Automatically the file is compiled or recompiled and the code reflectively loaded.
+        • shell arguments
+            - The user configures the program (an OS shell command) by its arguments.
+                / Facility would be hindered where an argument is used in typical cases, except the
+                  technically proficient user knows (or learns) how to avoid retyping it at each use.
+        • Breccian file, or other declarative file
+            - The user configures the program declaratively with a file written in Breccia.
+        • environment variables
+            - The user configures the program by setting environment variables in the OS shell.
 
     indentation style
         - Relegate to line ends symbolic boilerplate such as braces.
@@ -113,4 +118,4 @@ Editorial guidelines
                     - Clarity would suffer: one could no longer comment on a particular argument in line.
 
 
-                                                    \ Copyright © 2019-2021  Michael Allan.  Licence MIT.
+                                                    \ Copyright © 2019-2022  Michael Allan.  Licence MIT.
