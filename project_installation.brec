@@ -4,7 +4,7 @@ Installation instructions for the Java programming project
         1+ Ensure Makeshift is installed.
             : see http://reluk.ca/project/building/Makeshift/
         2+ Install the files of the present project.
-            >+ cd <command-directory>/
+            >+ cd <command directory>/
                 / The command directory is where project installations are accessible by their proper
                   paths.  The present project, for example, will shortly be accessible at `Java/`.
                     : see `^^command directory$` @ http://reluk.ca/project/lexicon.brec
@@ -17,15 +17,15 @@ Installation instructions for the Java programming project
                 / ⇒  Usage: test-logging <logger-name>
         5+ Get convenient access to the `test-logging` command.
             + Append the directory of this project’s shell commands to the search path.
-                >+ PATH=$PATH:<command-directory>/Java/bin
+                >+ PATH=$PATH:<command directory>/Java/bin
             + Test it.
                 >+ which test-logging
-                    / ⇒  <command-directory>/Java/bin/test-logging
+                    / ⇒  <command directory>/Java/bin/test-logging
                 >+ test-logging -?
                     / ⇒  Usage: test-logging <logger-name>
             + Make it permanent by adding the same to your login initializer:
 
-                  PATH=$PATH:<command-directory>/Java/bin
+                  PATH=$PATH:<command directory>/Java/bin
 
         working example
             : see http://reluk.ca/.profile
