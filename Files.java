@@ -31,7 +31,7 @@ public final class Files {
                   throws IOException {
                 if( x != null ) throw x;
                 if( !p.equals( d )) delete( p );
-                return CONTINUE; }});}
+                return CONTINUE; }}); }
 
 
 

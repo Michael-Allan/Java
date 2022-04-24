@@ -24,7 +24,7 @@ public final class Collections {
       */
     public static <K,V> void forEachRemaining​( final Iterator<Map.Entry<K,V>> iterator,
           final  BiConsumer<? super K, ? super V> action ) {
-        iterator.forEachRemaining( entry -> action.accept( entry.getKey(), entry.getValue() ));}}
+        iterator.forEachRemaining( entry -> action.accept( entry.getKey(), entry.getValue() )); }}
 
 
 
