@@ -2,6 +2,7 @@ package Java;
 
 import java.io.IOException;
 import java.nio.file.*;
+import java.nio.file.Path; // & deport Java.Path
 import java.nio.file.attribute.BasicFileAttributes;
 
 import static java.nio.file.Files.*;
