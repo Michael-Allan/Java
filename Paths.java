@@ -3,10 +3,10 @@ package Java;
 
 /** @see java.nio.file.Path
   */
-public final class Path {
+public final class Paths {
 
 
-    private Path() {}
+    private Paths() {}
 
 
 
