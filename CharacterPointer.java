@@ -40,7 +40,7 @@ public final class CharacterPointer {
 
 
 
-    /** Returns an echo of the text line, plus a column marker.
+    /** Returns an echo of the text line, plus a column mark.
       */
     public String markedLine() {
         final StringBuilder b = new StringBuilder();
