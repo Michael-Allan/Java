@@ -22,6 +22,9 @@ public final class CharacterPointer {
 
     /** The columnar offset at which the character occurs.  Columnar offsets are zero based and measured
       * in terms of grapheme clusters, beginning with the first cluster at offset zero in the text line.
+      *
+      *     @see <a href='https://unicode.org/reports/tr29/#Grapheme_Cluster_Boundaries'>
+      *       Grapheme cluster boundaries in Unicode text segmentation</a>
       */
     public final int column;
 
