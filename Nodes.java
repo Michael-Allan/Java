@@ -1,6 +1,9 @@
 package Java;
 
+import org.w3c.dom.Element;
 import org.w3c.dom.Node;
+
+import static org.w3c.dom.Node.ELEMENT_NODE;
 
 
 /** @see org.w3c.dom.Node
@@ -9,6 +12,14 @@ public final class Nodes {
 
 
     private Nodes() {}
+
+
+
+    /** Returns the parent of `node` as an element, or null if `node` has no such parent.
+      */
+    public static Element parentElement( Node node ) {
+        final Node p = node.getParentNode();
+        return p == null || p.getNodeType() != ELEMENT_NODE ? null : (Element)p; }
 
 
 
