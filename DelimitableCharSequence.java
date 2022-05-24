@@ -49,4 +49,4 @@ public interface DelimitableCharSequence extends CharSequence {
     public int start(); }
 
 
-                                                       // Copyright © 2021  Michael Allan.  Licence MIT.
+                                                        // Copyright © 2021  Michael Allan.  Licence MIT.
