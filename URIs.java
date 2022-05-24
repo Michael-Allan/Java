@@ -14,16 +14,14 @@ public final class URIs {
 
 
 
-    /** A pattern for `lookingAt` a schemed URI reference (a proper URI, that is) through its
-      * leading scheme component and ‘:’ separator.
+    /** A pattern for `lookingAt` and detecting a possible URI by the presence
+      * of its leading scheme component and ‘:’ separator.
       *
       *     @see java.util.regex.Matcher#lookingAt()
-      *     @see <a href='https://tools.ietf.org/html/rfc3986#section-4.1'>URI reference</a>
       *     @see <a href='https://tools.ietf.org/html/rfc3986#section-3'>URI</a>
       *     @see <a href='https://tools.ietf.org/html/rfc3986#section-3.1'>Scheme</a>
       */
     public static final Pattern schemedPattern = Pattern.compile( "[a-z0-9A-Z][a-z0-9A-Z+.-]*:" );
-      // See also `https://tools.ietf.org/html/rfc2234#section-6`.
 
 
 
@@ -41,4 +39,4 @@ public final class URIs {
 
 
 
-                                                       // Copyright © 2021  Michael Allan.  Licence MIT.
+                                                        // Copyright © 2021  Michael Allan.  Licence MIT.
