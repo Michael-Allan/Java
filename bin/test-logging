@@ -11,7 +11,8 @@ import static java.util.logging.Level.*;
 
 /** A shell command to issue test messages to a runtime event logger.
   *
-  *     @see <a href='http://reluk.ca/project/Java/bin/test-logging.brec'>The `test-logging` command</a>
+  *     @see <a href='http://reluk.ca/project/Java/bin/test-logging.brec.xht'>
+  *       The `test-logging` command</a>
   */
 public final class LoggingTestCommand { // [AFN]
 
