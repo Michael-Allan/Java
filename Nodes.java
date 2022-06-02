@@ -47,7 +47,19 @@ public final class Nodes {
         if( s == null ) {
             final Node p = node.getParentNode();
             if( p != null ) s = successorAfter( p ); }
-        return s; }}
+        return s; }
+
+
+
+    /** Returns the elemental successor of `node` in document order, including any first child,
+      * or null if `node` has no elemental successor.
+      *
+      *     @see <a href='https://www.w3.org/TR/DOM-Level-3-Core/glossary.html#dt-document-order'>
+      *       Definition of ‘document order’</a>
+      */
+    public static Element successorElement( Node n ) {
+        do n = successor( n ); while( n != null  &&  n.getNodeType() != ELEMENT_NODE );
+        return (Element)n; }}
 
 
 
