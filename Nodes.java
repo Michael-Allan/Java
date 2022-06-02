@@ -17,7 +17,7 @@ public final class Nodes {
 
     /** Returns the parent of `node` as an element, or null if `node` has no such parent.
       */
-    public static Element parentElement( Node node ) {
+    public static Element parentElement( final Node node ) {
         final Node p = node.getParentNode();
         return p == null || p.getNodeType() != ELEMENT_NODE ? null : (Element)p; }
 
@@ -29,7 +29,7 @@ public final class Nodes {
       *     @see <a href='https://www.w3.org/TR/DOM-Level-3-Core/glossary.html#dt-document-order'>
       *       Definition of ‘document order’</a>
       */
-    public static Node successor( Node node ) {
+    public static Node successor( final Node node ) {
         Node s = node.getFirstChild();
         if( s == null ) s = successorAfter( node );
         return s; }
