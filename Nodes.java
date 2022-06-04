@@ -2,8 +2,10 @@ package Java;
 
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
+import org.w3c.dom.Text;
 
 import static org.w3c.dom.Node.ELEMENT_NODE;
+import static org.w3c.dom.Node.TEXT_NODE;
 
 
 /** @see org.w3c.dom.Node
@@ -15,11 +17,24 @@ public final class Nodes {
 
 
 
-    /** Returns the parent of `node` as an element, or null if `node` has no such parent.
+    /** Returns `node` as an element, or null if `node` is either null or not an element.
       */
-    public static Element parentElement( final Node node ) {
-        final Node p = node.getParentNode();
-        return p == null || p.getNodeType() != ELEMENT_NODE ? null : (Element)p; }
+    public static Element asElement( final Node node ) {
+        return node == null || node.getNodeType() != ELEMENT_NODE ? null : (Element)node; }
+
+
+
+    /** Returns `node` as text, or null if `node` is either null or not text.
+      */
+    public static Text asText( final Node node ) {
+        return node == null || node.getNodeType() != TEXT_NODE ? null : (Text)node; }
+
+
+
+    /** Returns the parent of `node` as an element;
+      * or null if `node` either has no parent, or its parent is not an element.
+      */
+    public static Element parentElement( final Node node ) { return asElement( node.getParentNode() ); }
 
 
 
