@@ -31,6 +31,15 @@ public final class Nodes {
 
 
 
+    /** Whether `name` is the local name of `node`.
+      *
+      *     @throws NullPointerException If either `name` or `node` is null.
+      */
+    public static boolean hasName( final String name, final Node node ) {
+        return name.equals( node.getLocalName() ); }
+
+
+
     /** Returns the parent of `node` as an element;
       * or null if `node` either has no parent, or its parent is not an element.
       */
