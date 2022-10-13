@@ -14,6 +14,17 @@ public final class URIs {
 
 
 
+    /** Whether the given scheme is `http` or `https`.
+      */
+    public static final boolean isHTTP( final String scheme ) {
+        if( scheme.startsWith( "http" )) {
+            final int sN = scheme.length();
+            if( sN == 4  ) return true;
+            if( sN == 5 && scheme.endsWith("s") ) return true; }
+        return false; }
+
+
+
     /** A pattern for `lookingAt` and detecting a possible URI by the presence
       * of its leading scheme component and ‘:’ separator.
       *
@@ -39,4 +50,4 @@ public final class URIs {
 
 
 
-                                                        // Copyright © 2021  Michael Allan.  Licence MIT.
+                                                   // Copyright © 2021-2022  Michael Allan.  Licence MIT.
