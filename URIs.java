@@ -25,8 +25,8 @@ public final class URIs {
 
 
 
-    /** A pattern for `lookingAt` and detecting a possible URI by the presence
-      * of its leading scheme component and ‘:’ separator.
+    /** A `lookingAt` pattern for detecting a URI by the presence of its leading scheme component
+      * and ‘:’ separator.
       *
       *     @see java.util.regex.Matcher#lookingAt()
       *     @see <a href='https://datatracker.ietf.org/doc/html/rfc3986#section-3'>URI</a>
@@ -42,8 +42,8 @@ public final class URIs {
     public static URI unfragmented( URI u ) {
         if( u.getFragment() != null ) {
             try { u = new URI( u.getScheme(), u.getSchemeSpecificPart(), /*fragment*/null ); } /* Using
-              the decoded getters, not the raw ones.  For authority on this usage, see API § Identity.
-              https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/net/URI.html */
+              the decoded getters, not the raw ones.  For the authority on this usage, see § Identities
+              at `https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/net/URI.html` */
             catch( URISyntaxException x ) { throw new Unhandled( x ); }}
               // Unexpected for a mere reconstruction.
         return u; }}
