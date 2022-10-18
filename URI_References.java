@@ -3,7 +3,7 @@ package Java;
 import static Java.URIs.schemedPattern;
 
 
-/** @see <a href='https://datatracker.ietf.org/doc/html/rfc3986#section-4.1'>URI reference</a>
+/** @see <a href='https://www.rfc-editor.org/rfc/rfc3986#section-4.1'>URI reference</a>
   */
 public final class URI_References {
 
@@ -26,8 +26,8 @@ public final class URI_References {
       *
       * <p>This method may fail for a Windows file path.  Linux is assumed.</p>
       *
-      *     @see <a href='https://datatracker.ietf.org/doc/html/rfc3986#section-3.1'>Scheme</a>
-      *     @see <a href='https://datatracker.ietf.org/doc/html/rfc3986#section-4.2'>
+      *     @see <a href='https://www.rfc-editor.org/rfc/rfc3986#section-3.1'>Scheme</a>
+      *     @see <a href='https://www.rfc-editor.org/rfc/rfc3986#section-4.2'>
       *       Network-path reference</a>
       *     @see <a href='http://reluk.ca/project/editorial_guidelines.brec.xht'>
       *       Operating system, assumption of Linux</a> *//*

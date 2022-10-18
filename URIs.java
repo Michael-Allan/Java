@@ -29,8 +29,8 @@ public final class URIs {
       * and ‘:’ separator.
       *
       *     @see java.util.regex.Matcher#lookingAt()
-      *     @see <a href='https://datatracker.ietf.org/doc/html/rfc3986#section-3'>URI</a>
-      *     @see <a href='https://datatracker.ietf.org/doc/html/rfc3986#section-3.1'>Scheme</a>
+      *     @see <a href='https://www.rfc-editor.org/rfc/rfc3986#section-3'>URI</a>
+      *     @see <a href='https://www.rfc-editor.org/rfc/rfc3986#section-3.1'>Scheme</a>
       */
     public static final Pattern schemedPattern = Pattern.compile( "[a-z0-9A-Z][a-z0-9A-Z+.-]*:" );
 
