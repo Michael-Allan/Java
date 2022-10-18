@@ -12,6 +12,15 @@ public final class URI_References {
 
 
 
+    /** Returns the same instance of `directory` if already it ends with a slash character ‘/’,
+      * or is empty ‘’; otherwise returns a copy of `directory` with a slash ‘/’ appended.
+      */
+    public static String enslash( String directory ) {
+        if( !( directory.isEmpty() || directory.endsWith("/") )) directory += "/";
+        return directory; }
+
+
+
     /** Returns true if `ref` begins either with a scheme, or the ‘//’ of a network-path reference;
       * false otherwise.
       *
