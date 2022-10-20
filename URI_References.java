@@ -14,6 +14,9 @@ public final class URI_References {
 
     /** Returns the same instance of `directory` if already it ends with a slash character ‘/’,
       * or is empty ‘’; otherwise returns a copy of `directory` with a slash ‘/’ appended.
+      *
+      *     @param directory A <a href='https://www.rfc-editor.org/rfc/rfc3986#section-4.1'>
+      *       URI reference</a>.
       */
     public static String enslash( String directory ) {
         if( !( directory.isEmpty() || directory.endsWith("/") )) directory += "/";
@@ -26,6 +29,8 @@ public final class URI_References {
       *
       * <p>This method may fail for a Windows file path.  Linux is assumed.</p>
       *
+      *     @param ref A <a href='https://www.rfc-editor.org/rfc/rfc3986#section-4.1'>
+      *       URI reference</a>.
       *     @see <a href='https://www.rfc-editor.org/rfc/rfc3986#section-3.1'>Scheme</a>
       *     @see <a href='https://www.rfc-editor.org/rfc/rfc3986#section-4.2'>
       *       Network-path reference</a>
