@@ -27,17 +27,11 @@ public final class URI_References {
     /** Returns true if `ref` begins either with a scheme, or the ‘//’ of a network-path reference;
       * false otherwise.
       *
-      * <p>This method may fail for a Windows file path.  Linux is assumed.</p>
-      *
       *     @param ref A <a href='https://www.rfc-editor.org/rfc/rfc3986#section-4.1'>
       *       URI reference</a>.
       *     @see <a href='https://www.rfc-editor.org/rfc/rfc3986#section-3.1'>Scheme</a>
       *     @see <a href='https://www.rfc-editor.org/rfc/rfc3986#section-4.2'>
       *       Network-path reference</a>
-      *     @see <a href='http://reluk.ca/project/editorial_guidelines.brec.xht'>
-      *       Operating system, assumption of Linux</a> *//*
-      *
-      * Re Windows, see `https://stackoverflow.com/q/11687916/2402790`.
       */
     public static boolean isRemote( String ref ) {
         return ref.startsWith("//") || schemedPattern.matcher(ref).lookingAt(); }}
