@@ -1,5 +1,7 @@
 package Java;
 
+import java.net.URI;
+
 import static Java.URIs.schemedPattern;
 
 
@@ -24,17 +26,27 @@ public final class URI_References {
 
 
 
-    /** Returns true if `ref` begins either with a scheme, or the ‘//’ of a network-path reference;
-      * false otherwise.
+    /** Returns true if `ref` begins with either a scheme or authority, false otherwise.
       *
       *     @param ref A <a href='https://www.rfc-editor.org/rfc/rfc3986#section-4.1'>
       *       URI reference</a>.
       *     @see <a href='https://www.rfc-editor.org/rfc/rfc3986#section-3.1'>Scheme</a>
-      *     @see <a href='https://www.rfc-editor.org/rfc/rfc3986#section-4.2'>
-      *       Network-path reference</a>
+      *     @see <a href='https://www.rfc-editor.org/rfc/rfc3986#section-3.2'>Authority</a>
       */
     public static boolean isRemote( String ref ) {
-        return ref.startsWith("//") || schemedPattern.matcher(ref).lookingAt(); }}
+        return ref.startsWith("//") || schemedPattern.matcher(ref).lookingAt(); }
+
+
+
+    /** Returns true if `ref` begins with either a scheme or authority, false otherwise.
+      *
+      *     @param ref A <a href='https://www.rfc-editor.org/rfc/rfc3986#section-4.1'>
+      *       URI reference</a>.
+      *     @see <a href='https://www.rfc-editor.org/rfc/rfc3986#section-3.1'>Scheme</a>
+      *     @see <a href='https://www.rfc-editor.org/rfc/rfc3986#section-3.2'>Authority</a>
+      */
+    public static boolean isRemote( URI ref ) {
+      return ref.getScheme() != null  ||  ref.getRawAuthority() != null; }}
 
 
 
