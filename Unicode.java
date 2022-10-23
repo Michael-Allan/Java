@@ -15,7 +15,7 @@ public final class Unicode {
       *     @see <a href='https://unicode.org/reports/tr29/#Grapheme_Cluster_Boundaries'>
       *       Grapheme cluster boundaries in Unicode text segmentation</a>
       */
-    public static final Pattern graphemePattern = Pattern.compile( "\\X" ); } /*
+    public static final Pattern graphemeClusterPattern = Pattern.compile( "\\X" ); } /*
       The alternative for cluster discovery (within the JDK) is `java.txt.BreakIterator`, but
       apparently it is outdated in this regard, whereas `java.util.regex` was updated for JDK 15.
       https://bugs.openjdk.java.net/browse/JDK-8174266
