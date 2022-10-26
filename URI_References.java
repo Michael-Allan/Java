@@ -33,7 +33,7 @@ public final class URI_References {
       *     @see <a href='https://www.rfc-editor.org/rfc/rfc3986#section-3.1'>Scheme</a>
       *     @see <a href='https://www.rfc-editor.org/rfc/rfc3986#section-3.2'>Authority</a>
       */
-    public static boolean isRemote( String ref ) {
+    public static boolean isRemote( final String ref ) {
         return ref.startsWith("//") || schemedPattern.matcher(ref).lookingAt(); }
 
 
@@ -45,7 +45,7 @@ public final class URI_References {
       *     @see <a href='https://www.rfc-editor.org/rfc/rfc3986#section-3.1'>Scheme</a>
       *     @see <a href='https://www.rfc-editor.org/rfc/rfc3986#section-3.2'>Authority</a>
       */
-    public static boolean isRemote( URI ref ) {
+    public static boolean isRemote( final URI ref ) {
       return ref.getScheme() != null  ||  ref.getRawAuthority() != null; }}
 
 
