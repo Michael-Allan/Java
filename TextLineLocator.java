@@ -2,9 +2,9 @@ package Java;
 
 
 /** Means to locate for a given offset in a text the line in which it falls.  Each call to `locateLine`
-  * is restricted to a particular region of the text, which the caller may change from call to call.
-  * Regardless offsets are always measured from the start of the whole text in fixed-width units,
-  * typically UTF-16 code units.
+  * is restricted to a {@linkplain #endsRegional particular region} of the text, which the caller may
+  * change from call to call.  Regardless offsets are always measured from the start of the whole text
+  * in fixed-width units, typically UTF-16 code units.
   */
 public class TextLineLocator {
 
