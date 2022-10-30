@@ -9,8 +9,8 @@ Editorial guidelines for Java
             - The user configures the program by copying its source-launch entry command
               up path and editing it.
                 / Where the user is assumedly technically proficient enough to install a JDK.
-            - Explicitly minimize the code in the entry command to minimize exposure of copies
-              to upstream revisions.
+            ∴ Explicitly minimize the code in the entry command in order to minimize
+              the exposure of copies to upstream revisions.
         • Java file, or other procedural file
             - The user configures the program procedurally with a file written in Java source.
                 / Where the user is assumedly technically proficient enough to install a JDK.
