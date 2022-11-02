@@ -26,7 +26,7 @@ public final class BufferCharSequence implements DelimitableCharSequence {
 
 
     public @Override char charAt( final int c ) {
-        if( c < 0 || c >= length ) throw new IndexOutOfBoundsException();
+        if( c < 0 || c >= length ) throw new IndexOutOfBoundsException( c );
         return buffer.get( start + c ); }
 
 
@@ -96,4 +96,4 @@ public final class BufferCharSequence implements DelimitableCharSequence {
     private int start; }
 
 
-                                                        // Copyright © 2021  Michael Allan.  Licence MIT.
+                                                   // Copyright © 2021-2022  Michael Allan.  Licence MIT.

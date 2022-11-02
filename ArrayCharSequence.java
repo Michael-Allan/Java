@@ -22,7 +22,7 @@ public class ArrayCharSequence implements DelimitableCharSequence {
 
 
     public final @Override char charAt( final int c ) {
-        if( c < 0 || c >= length ) throw new IndexOutOfBoundsException();
+        if( c < 0 || c >= length ) throw new IndexOutOfBoundsException( c );
         return array[start + c]; }
 
 
