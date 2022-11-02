@@ -31,12 +31,38 @@ public final class Nodes {
 
 
 
+    /** Returns `node` if it is a element, otherwise `ownerElement(node)`.
+      *
+      *     @see #ownerElement(Node)
+      */
+    public static Element contextElement( final Node node ) {
+        return isElement(node) ? (Element)node : ownerElement(node); }
+
+
+
     /** Whether `name` is the local name of `node`.
       *
       *     @throws NullPointerException If either `name` or `node` is null.
       */
     public static boolean hasName( final String name, final Node node ) {
         return name.equals( node.getLocalName() ); }
+
+
+
+    /** Whwther `node` is an element.
+      */
+    public static boolean isElement( final Node node ) { return node.getNodeType() == ELEMENT_NODE; }
+
+
+
+    /** Returns the nearest elemental ancestor of `node`, or null if there is none.
+      *
+      *     @return The nearest ancestor of `node` that is an element, or null if there is none.
+      *     @see #contextElement(Node)
+      */
+    public static Element ownerElement( Node node ) {
+        do node = node.getParentNode(); while( node != null && !isElement(node) );
+        return (Element)node; }
 
 
 
