@@ -17,29 +17,6 @@ public final class Nodes {
 
 
 
-    /** Returns `node` as an element, or null if `node` is either null or not an element.
-      */
-    public static Element asElement( final Node node ) {
-        return node == null || node.getNodeType() != ELEMENT_NODE ? null : (Element)node; }
-
-
-
-    /** Returns `node` as text, or null if `node` is either null or not text.
-      */
-    public static Text asText( final Node node ) {
-        return node == null || node.getNodeType() != TEXT_NODE ? null : (Text)node; }
-
-
-
-    /** Returns `node` if it is a element, otherwise `ownerElement(node)`.
-      *
-      *     @see #ownerElement(Node)
-      */
-    public static Element contextElement( final Node node ) {
-        return isElement(node) ? (Element)node : ownerElement(node); }
-
-
-
     /** Whether `name` is the local name of `node`.
       *
       *     @throws NullPointerException If either `name` or `node` is null.
@@ -49,27 +26,40 @@ public final class Nodes {
 
 
 
-    /** Whwther `node` is an element.
+    /** Whether `node` is typed an an element.
+      *
+      *     @see Node#getNodeType()
+      *     @throws NullPointerException If `node` is null.  Note the difference from the behaviour
+      *       of the `instanceof` operator, which would instead return true.
       */
     public static boolean isElement( final Node node ) { return node.getNodeType() == ELEMENT_NODE; }
 
 
 
-    /** Returns the nearest elemental ancestor of `node`, or null if there is none.
+    /** Whether `node` is typed as text.
       *
-      *     @return The nearest ancestor of `node` that is an element, or null if there is none.
-      *     @see #contextElement(Node)
+      *     @see Node#getNodeType()
+      *     @throws NullPointerException If `node` is null.  Note the difference from the behaviour
+      *       of the `instanceof` operator, which would instead return true.
       */
-    public static Element ownerElement( Node node ) {
-        do node = node.getParentNode(); while( node != null && !isElement(node) );
-        return (Element)node; }
+    public static boolean isText( final Node node ) { return node.getNodeType() == TEXT_NODE; }
 
 
 
-    /** Returns the parent of `node` as an element;
-      * or null if `node` either has no parent, or its parent is not an element.
+    /** Returns the parent of `node` as an element, or null if `node` has no parent.
+      *
+      *     @throws ClassCastException If the parent of `node` is neither null nor an element.
       */
-    public static Element parentElement( final Node node ) { return asElement( node.getParentNode() ); }
+    public static Element parentAsElement( final Node node ) { return (Element)node.getParentNode(); }
+
+
+
+    /** Returns the parent of `node` as an element; or null if `node` either has no parent,
+      * or its parent is not an element.
+      */
+    public static Element parentElement( Node node ) {
+        node = node.getParentNode();
+        return node instanceof Element ? (Element)node : null; }
 
 
 
@@ -108,7 +98,7 @@ public final class Nodes {
       *       Definition of ‘document order’</a>
       */
     public static Element successorElement( Node n ) {
-        do n = successor( n ); while( n != null  &&  n.getNodeType() != ELEMENT_NODE );
+        do n = successor( n ); while( n != null  &&  !isElement(n) );
         return (Element)n; }}
 
 
