@@ -2,6 +2,14 @@ Editorial guidelines for Java
 
     - These are the guidelines I follow in the Java source files I maintain.
 
+    assert statements, detail message
+        - Form any detail message as a positive statement of what is asserted.
+            : re `detail message` see @ non-fractal
+              https://docs.oracle.com/javase/specs/jls/se18/html/jls-14.html#jls-14.10
+        / For example:
+
+               assert exists( file ): "The file exists"
+
     configuration, end user, of programs
         / The configuration methods herein are ordered from most to least natural
           for a technically proficient user, natural meaning facile yet powerful.
