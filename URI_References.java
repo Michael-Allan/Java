@@ -14,8 +14,8 @@ public final class URI_References {
 
 
 
-    /** Returns the same instance of `directory` if already it ends with a slash character ‘/’,
-      * or is empty ‘’; otherwise returns a copy of `directory` with a slash ‘/’ appended.
+    /** Returns the given directory if it ends with a slash character ‘/’ or is empty,
+      * otherwise returns a copy of the directory with a slash character appended.
       *
       *     @param directory A <a href='https://www.rfc-editor.org/rfc/rfc3986#section-4.1'>
       *       URI reference</a>.
