@@ -41,11 +41,11 @@ public final class URIs {
       */
     public static URI unfragmented( URI u ) {
         if( u.getFragment() != null ) {
-            try { u = new URI( u.getScheme(), u.getSchemeSpecificPart(), /*fragment*/null ); } /* Using
-              the decoded getters, not the raw ones.  For the authority on this usage, see § Identities
-              at `https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/net/URI.html` */
+            try { u = new URI( u.getScheme(), u.getSchemeSpecificPart(), /*fragment*/null ); } /*
+              With decoding (as opposed to raw) getters, as stipulated in (and above) § Identities:
+              `https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/net/URI.html` */
             catch( URISyntaxException x ) { throw new Unhandled( x ); }}
-              // Unexpected for a mere reconstruction.
+              // Unexpected with a reconstruction of this sort.
         return u; }}
 
 
