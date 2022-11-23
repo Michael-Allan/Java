@@ -23,7 +23,7 @@ public final class Paths {
       * a `file` scheme; and therefore (b) can translate relative-path references,
       * which are inexpressible under a `file` scheme.</p>
       *
-      *     @param referrer The referring file, wherein the reference is directly contained.
+      *     @param referrer The referring file, wherein the reference is contained.
       *     @see Path#of(URI)
       *     @see <a href='https://www.rfc-editor.org/rfc/rfc8089#section-2'>File-scheme URI syntax</a>
       *     @see <a href='https://www.rfc-editor.org/rfc/rfc3986#section-4.1'>
