@@ -69,7 +69,7 @@ public final class Paths {
     /** Translates to a URI relative-path reference the given relative path.
       *
       *     @see <a href='https://www.rfc-editor.org/rfc/rfc3986#section-4.2'>
-      *       URI generic syntax §4.2</a>
+      *       URI generic syntax §4.2, ‘relative-path reference’</a>
       *     @throws IllegalArgumentException If `path` is absolute.
       *     @see Path#toUri()
       */

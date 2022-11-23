@@ -5,7 +5,11 @@ import java.net.URISyntaxException;
 import java.util.regex.Pattern;
 
 
-/** @see URI
+/** @see <a href='https://www.rfc-editor.org/rfc/rfc3986'>
+  *   URI generic syntax</a>
+  * @see <a href='https://www.rfc-editor.org/rfc/rfc3986#section-3'>
+  *   URI generic syntax §3, ‘URI’</a>
+  * @see java.net.URI
   */
 public final class URIs {
 
@@ -29,8 +33,10 @@ public final class URIs {
       * and ‘:’ separator.
       *
       *     @see java.util.regex.Matcher#lookingAt()
-      *     @see <a href='https://www.rfc-editor.org/rfc/rfc3986#section-3'>URI</a>
-      *     @see <a href='https://www.rfc-editor.org/rfc/rfc3986#section-3.1'>Scheme</a>
+      *     @see <a href='https://www.rfc-editor.org/rfc/rfc3986#section-3'>
+      *       URI generic syntax §3, ‘URI’</a>
+      *     @see <a href='https://www.rfc-editor.org/rfc/rfc3986#section-3.1'>
+      *       URI generic syntax §3.1, Scheme</a>
       */
     public static final Pattern schemedPattern = Pattern.compile( "[a-z0-9A-Z][a-z0-9A-Z+.-]*:" );
 
