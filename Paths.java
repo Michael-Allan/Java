@@ -17,13 +17,32 @@ public final class Paths {
 
 
 
+    /** Translates to a `Path` instance the given URI reference, which must not be
+      * a relative-path reference.  Unlike the method `Path.of`, this method
+      * does not require `reference` to use a `file` scheme.
+      *
+      *     @see Path#of(URI)
+      *     @see <a href='https://www.rfc-editor.org/rfc/rfc3986#section-4.1'>
+      *       URI generic syntax §4.1, URI reference</a>
+      *     @see <a href='https://www.rfc-editor.org/rfc/rfc3986#section-4.2'>
+      *       URI generic syntax §4.2, ‘relative-path reference’</a>
+      */
+    public static Path toPath( final URI reference ) {
+        if( reference.getScheme() == null  &&  !reference.getPath().startsWith("/") ) {
+            throw new IllegalArgumentException( "Relative-path reference: " + reference ); }
+        return toPath( reference, /*referrer*/null ); }
+
+
+
     /** Translates to a `Path` instance the given URI reference.
       *
-      * <p>Unlike the method `Path.of`, this method (a) does not require `u` to use
+      * <p>Unlike the method `Path.of`, this method (a) does not require `reference` to use
       * a `file` scheme; and therefore (b) can translate relative-path references,
       * which are inexpressible under a `file` scheme.</p>
       *
-      *     @param referrer The referring file, wherein the reference is contained.
+      *     @param referrer The referring file, wherein the reference is contained.  This argument
+      *       will be used only if `reference` is a relative-path reference; otherwise its value
+      *       may be given as null.
       *     @see Path#of(URI)
       *     @see <a href='https://www.rfc-editor.org/rfc/rfc8089#section-2'>File-scheme URI syntax</a>
       *     @see <a href='https://www.rfc-editor.org/rfc/rfc3986#section-4.1'>
@@ -39,8 +58,9 @@ public final class Paths {
         if( u.getScheme() == null ) {
             if( u.getRawQuery() != null  ||  u.getRawFragment() != null ) {
                 throw new IllegalArgumentException(
-                  "Query or fragment component on a file-path reference" ); } /* Rather than ‘URI has
-                    a query component’ or ‘fragment component’, as `Path.of` below would throw it. */
+                  "Query or fragment component on a file-path reference: " + reference ); } /*
+                    Rather than ‘URI has a query component’ or ‘fragment component’,
+                    as `Path.of` below would throw it. */
             String p = u.getPath();
             if( p.startsWith( "/" )) { /* Then `u` was given as a network-path or absolute-path reference
                   and needs only the addition of a `file` scheme to make it acceptable to `Path.of`. */
