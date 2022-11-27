@@ -75,6 +75,8 @@ Editorial guidelines for Java
                 / For consistency and clarity, especially as not all members of an interface
                   are necessarily public these days.
 
+    parameter, naming of formal
+        - Place at the end of the parameter name any underscore ‘_’ that marks a formal parameter unused.
     shebangs
         - Re the form of shebang in source-launch shell commands.
             : re `shebang` see http://openjdk.java.net/jeps/330#Shebang_files
