@@ -26,6 +26,7 @@ public final class Paths {
       *       URI generic syntax §4.1, URI reference</a>
       *     @see <a href='https://www.rfc-editor.org/rfc/rfc3986#section-4.2'>
       *       URI generic syntax §4.2, ‘relative-path reference’</a>
+      *     @throws IllegalArgumentException If `reference` is a relative-path reference.
       */
     public static Path toPath( final URI reference ) {
         if( reference.getScheme() == null  &&  !reference.getPath().startsWith("/") ) {
@@ -86,18 +87,43 @@ public final class Paths {
 
 
 
-    /** Translates to a URI relative-path reference the given relative path.
+    /** Translates to a URI relative-path reference the given rootless path.
       *
       *     @see <a href='https://www.rfc-editor.org/rfc/rfc3986#section-4.2'>
       *       URI generic syntax §4.2, ‘relative-path reference’</a>
-      *     @throws IllegalArgumentException If `path` is absolute.
+      *     @throws IllegalArgumentException If `path` includes a root.
       *     @see Path#toUri()
       */
-    public static String toRelativePathReference( final Path path ) {
-        if( path.isAbsolute() ) throw new IllegalArgumentException();
+    public static String to_URI_relativePathReference( final Path path ) {
+        if( path.getRoot() != null ) throw new IllegalArgumentException();
         String s = path.toString();
         if( separatorChar != '/' ) s = s.replace( separatorChar, '/' );
-        return s; }}
+        return s; }
+
+
+
+    /** Translates to a URI relative reference the given file path.
+      *
+      * <p>Unlike the method `Path.toUri` which returns a URI with a `file` scheme, this method
+      * returns a URI with no scheme at all, namely a relative reference.  Therefore it can
+      * translate a rootless path as such, namely to a relative-path reference,
+      * which is inexpressible under a `file` scheme.</p>
+      *
+      *     @see <a href='https://www.rfc-editor.org/rfc/rfc3986#section-4.2'>
+      *       URI generic syntax §4.2, Relative reference</a>
+      *     @see <a href='https://www.rfc-editor.org/rfc/rfc8089#section-2'>File-scheme URI syntax</a>
+      *     @see Path#toUri()
+      */
+    public static String to_URI_relativeReference( final Path path ) {
+        if( path.getRoot() == null ) return to_URI_relativePathReference( path );
+        URI u = path.toUri();
+        try { // With decoding (as opposed to raw) getters:
+            u = new URI( /*scheme*/null, u.getAuthority(), u.getPath(), u.getQuery(),
+              u.getFragment() ); } /* So as stipulated in (and above) § Identities:
+                `https://docs.oracle.com/en/java/javase/18/docs/api/java.base/java/net/URI.html` */
+        catch( URISyntaxException x ) { throw new Unhandled( x ); }
+          // Unexpected with a reconstruction of this sort.
+        return u.toASCIIString(); }}
 
 
 
