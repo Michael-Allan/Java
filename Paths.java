@@ -5,7 +5,6 @@ import java.net.URISyntaxException;
 import java.nio.file.Path;
 
 import static java.io.File.separatorChar;
-import static java.nio.file.Files.isRegularFile;
 
 
 /** @see java.nio.file.Path
@@ -74,9 +73,9 @@ public final class Paths {
                 assert u.getAuthority() == null; /* As required for a relative-path reference,
                   and also for the `resolve` call below to work. */
                 final Path referrerAbsolute = referrer.toAbsolutePath();
-                if( !isRegularFile( referrerAbsolute )) {
+                backstop = referrerAbsolute.getParent();
+                if( backstop == null ) {
                     throw new IllegalArgumentException( "Not a regular file: " + referrer ); }
-                backstop = referrerAbsolute.getParent(); // Given a regular file, this cannot be null.
                 u = backstop.toUri().resolve/* to an intermediary, absolute-path reference */( u ); }} /*
                   Not just any URI with an absolute path will suffice here; it must be deep enough in the
                   hierarchy to resolve any `..` segments.  (Using the default directory as the backstop
