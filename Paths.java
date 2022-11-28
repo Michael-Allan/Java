@@ -16,6 +16,13 @@ public final class Paths {
 
 
 
+    /** Whether `p` has a name that ends with the given extension.
+      */
+    public static boolean hasExtension( final String extension, final Path p ) {
+        return p.getNameCount() != 0  &&  p.getFileName().toString().endsWith( extension ); }
+
+
+
     /** Translates to a `Path` instance the given URI reference, which must not be
       * a relative-path reference.  Unlike the method `Path.of`, this method
       * does not require `reference` to use a `file` scheme.

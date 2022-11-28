@@ -28,6 +28,14 @@ public final class URI_References {
 
 
 
+    /** Whether `ref` has a path that ends with the given extension.
+      */
+    public static boolean hasExtension( final String extension, final URI ref ) {
+        final String path = ref.getPath();
+        return path != null  &&  path.endsWith( extension ); }
+
+
+
     /** Returns true if URI reference `ref` begins with either a scheme or authority, false otherwise.
       *
       *     @see <a href='https://www.rfc-editor.org/rfc/rfc3986#section-4.1'>
