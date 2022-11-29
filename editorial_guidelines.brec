@@ -85,7 +85,7 @@ Editorial guidelines for Java
             : re `source-launch shell commands` see http://reluk.ca/project/building/Makeshift/bin/
         - A shebang might use `-S` instead of `--split-string`, but only with caveats.
             : see `source-launch files encoded with a shebang\.$` @ `NOTES$` @
-              http://reluk.ca/project/work/Java/Emacs/jmt-mode.el
+              http://reluk.ca/project/Java/Emacs/jmt-mode.el
         - Rather than depending on the value of `JDK_HOME`, the shebang might depend instead
           on inclusion of the JDK `bin` directory in the `PATH`:
 
