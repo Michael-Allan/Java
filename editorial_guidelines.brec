@@ -77,6 +77,7 @@ Editorial guidelines for Java
 
     parameter, naming of formal
         - Place at the end of the parameter name any underscore ‘_’ that marks a formal parameter unused.
+
     shebangs
         - Re the form of shebang in source-launch shell commands.
             : re `shebang` see http://openjdk.java.net/jeps/330#Shebang_files
@@ -126,6 +127,12 @@ Editorial guidelines for Java
                     - A Bash script can, of course, resolve the path relative to its own location.
                 | Omit the argument files.
                     - Clarity would suffer: one could no longer comment on a particular argument in line.
+
+    text blocks
+        - Avoid using them till Emacs (CC Mode or Java Mode Tamed) correctly faces them.
+            : see `^^+ Repair fontification of text blocks.$` @ ~/work/Java/Emacs/working_notes.brec
+            - Meantime they overwork CC Mode, and severely reduce (somehow) the undo capacity.
+
 
 
                                                     \ Copyright © 2019-2022  Michael Allan.  Licence MIT.
