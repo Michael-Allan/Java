@@ -46,9 +46,8 @@ public final class LoggingTestCommand { // [AFN]
 
 
     private void run() {
-        logger.log( OFF, """
-          Logging at levels `OFF`, `SEVERE`, `WARNING`, `INFO`, \
-          `CONFIG`, `FINE`, `FINER`, `FINEST` and `ALL`:""" );
+        logger.log( OFF, "Logging at levels `OFF`, `SEVERE`, `WARNING`, `INFO`, `CONFIG`, "
+          + "`FINE`, `FINER`, `FINEST` and `ALL`:" );
         test( OFF );
         test( SEVERE );
         test( WARNING );
