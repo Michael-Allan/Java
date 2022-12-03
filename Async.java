@@ -10,8 +10,8 @@ import static java.lang.annotation.RetentionPolicy.SOURCE;
   * which should be detailed in its API description.
   */
   @Documented @Retention(SOURCE)
-  @Target({ CONSTRUCTOR, FIELD, LOCAL_VARIABLE, METHOD, MODULE, PACKAGE, PARAMETER, TYPE_USE }) // [OTT]
-    // Any but `RECORD_COMPONENT`, which belongs at present to a preview feature.
+  @Target({ CONSTRUCTOR, FIELD, LOCAL_VARIABLE, METHOD, MODULE, PACKAGE, PARAMETER, RECORD_COMPONENT,
+   TYPE_USE }) // [OTT]
 public @interface Async {}
 
 
@@ -22,4 +22,4 @@ public @interface Async {}
 
 
 
-                                                        // Copyright © 2020  Michael Allan.  Licence MIT.
+                                                  // Copyright © 2020, 2022  Michael Allan.  Licence MIT.
