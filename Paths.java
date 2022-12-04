@@ -33,6 +33,7 @@ public final class Paths {
       *     @see <a href='https://www.rfc-editor.org/rfc/rfc3986#section-4.2'>
       *       URI generic syntax §4.2, ‘relative-path reference’</a>
       *     @throws IllegalArgumentException If `reference` is a relative-path reference.
+      *     @throws IllegalArgumentException If `reference` has a query or fragment component.
       */
     public static Path toPath( final URI reference ) {
         if( reference.getScheme() == null  &&  !reference.getPath().startsWith("/") ) {
@@ -56,6 +57,7 @@ public final class Paths {
       *       URI generic syntax §4.1, URI reference</a>
       *     @see <a href='https://www.rfc-editor.org/rfc/rfc3986#section-4.2'>
       *       URI generic syntax §4.2, ‘relative-path reference’</a>
+      *     @throws IllegalArgumentException If `reference` has a query or fragment component.
       */
     public static Path toPath( final URI reference, final Path referrer ) {
         URI u = reference;
