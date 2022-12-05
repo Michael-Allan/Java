@@ -130,7 +130,7 @@ Editorial guidelines for Java
 
     text blocks
         - Avoid using them till Emacs (CC Mode or Java Mode Tamed) correctly faces them.
-            : see `^^+ Repair fontification of text blocks.$` @ ~/work/Java/Emacs/working_notes.brec
+            : see `^^\+ Repair fontification of text blocks.$` @ ~/work/Java/Emacs/working_notes.brec
             - Meantime they overwork CC Mode, and severely reduce (somehow) the undo capacity.
 
 
