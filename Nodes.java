@@ -91,14 +91,27 @@ public final class Nodes {
 
 
 
-    /** Returns the elemental successor of `node` in document order, including any first child,
-      * or null if `node` has no elemental successor.
+    /** Returns the elemental successor of `n` in document order, including any first child,
+      * or null if `n` has no elemental successor.
       *
       *     @see <a href='https://www.w3.org/TR/DOM-Level-3-Core/glossary.html#dt-document-order'>
       *       Definition of ‘document order’</a>
       */
     public static Element successorElement( Node n ) {
         do n = successor( n ); while( n != null  &&  !isElement(n) );
+        return (Element)n; }
+
+
+
+    /** Returns the exclusive elemental successor of `n` in document order, or null if there is none.
+      *
+      *     @see <a href='https://www.w3.org/TR/DOM-Level-3-Core/glossary.html#dt-document-order'>
+      *       Definition of ‘document order’</a>
+      *     @return The first elemental successor of `n` outside of its descendants,
+      *       or null if none exists.
+      */
+    public static Element successorElementAfter( Node n ) {
+        do n = successorAfter( n ); while( n != null  &&  !isElement(n) );
         return (Element)n; }}
 
 
