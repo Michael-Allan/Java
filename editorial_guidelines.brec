@@ -107,7 +107,7 @@ Editorial guidelines for Java
               be set to the command directory.
                 - The command directory is where project installations are accessible by their
                   proper paths.  The present project, for example, would be accessible at `Java/`.
-                    : see `^^command directory$` @ http://reluk.ca/project/lexicon.brec
+                    : see `^*command directory$` @ http://reluk.ca/project/lexicon.brec
                     \ Keep this lexical reiteration, instructions for basic commands refer here.
             - The dependency is located in the shebang, specifically its references to argument files
               such as `java_arguments`, each formed as a relative path.
@@ -130,7 +130,7 @@ Editorial guidelines for Java
 
     text blocks
         - Avoid using them till Emacs (CC Mode or Java Mode Tamed) correctly faces them.
-            : see `^^\+ Repair fontification of text blocks.$` @ ~/work/Java/Emacs/working_notes.brec
+            : see `^*\+ Repair fontification of text blocks.$` @ ~/work/Java/Emacs/working_notes.brec
             - Meantime they overwork CC Mode, and severely reduce (somehow) the undo capacity.
 
 
