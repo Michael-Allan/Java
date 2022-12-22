@@ -46,6 +46,15 @@ public final class Nodes {
 
 
 
+    /** Returns the nearest of the node’s subsequent siblings of the given local name,
+      * or null if there are none.
+      */
+    public static Node nextSibling( Node node, final String name ) {
+        do node = node.getNextSibling(); while( node != null && !hasName( name, node ));
+        return node; }
+
+
+
     /** Returns the parent of `node` as an element, or null if `node` has no parent.
       *
       *     @throws ClassCastException If the parent of `node` is neither null nor an element.
@@ -60,6 +69,15 @@ public final class Nodes {
     public static Element parentElement( Node node ) {
         node = node.getParentNode();
         return node instanceof Element ? (Element)node : null; }
+
+
+
+    /** Returns the nearest of the node’s prior siblings of the given local name,
+      * or null if there are none.
+      */
+    public static Node previousSibling( Node node, final String name ) {
+        do node = node.getPreviousSibling(); while( node != null && !hasName( name, node ));
+        return node; }
 
 
 
@@ -112,7 +130,14 @@ public final class Nodes {
       */
     public static Element successorElementAfter( Node n ) {
         do n = successorAfter( n ); while( n != null  &&  !isElement(n) );
-        return (Element)n; }}
+        return (Element)n; }
+
+
+
+    /** Returns the flat text (aka `data`) of the first child of the given node,
+      * which child must be a text node.
+      */
+    public static String textChildFlat( final Node n ) { return ((Text)n.getFirstChild()).getData(); }}
 
 
 
