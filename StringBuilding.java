@@ -1,7 +1,5 @@
 package Java;
 
-import static java.lang.Character.isWhitespace;
-
 
 /** @see StringBuilder
   */
@@ -26,25 +24,17 @@ public final class StringBuilding {
       * with a single space each.
       *
       *     @return The same string builder `b`.
+      *     @see WhitespaceCollapser#collapseWhitespace(StringBuilder)
       */
-    public static StringBuilder collapseWhitespace( final StringBuilder b ) {
-        boolean wasWhitespaceLast = true; // Thus to trim any leading space.
-        int r = 0; // Index of next read in `b`.
-        int w = 0; // Index of next write in `b`.
-        for( final int cN = b.length(); r < cN; ++r ) {
-            char ch = b.charAt( r );
-            if( !isWhitespace( ch )) { // Then ensure `ch` appears here.
-                if( w != r ) b.setCharAt( w, ch ); // Else already `ch` is there.
-                ++w;
-                wasWhitespaceLast = false; }
-            else if( !wasWhitespaceLast ) { // Then ensure a space ' ' appears here.
-                if( w != r || ch != ' ' ) b.setCharAt( w, ' ' ); // Else already ' ' is there.
-                ++w;
-                wasWhitespaceLast = true; } /*
-            Else omit this unwanted whitespace character. */ }
-        if( w > 0 && wasWhitespaceLast ) --w; // Trim any trailing space, necessarily a single space.
-        b.setLength( w );
-        return b; }}
+    public static StringBuilder collapseWhitespace( StringBuilder b ) {
+        return collapser.collapseWhitespace( b ); }
+
+
+
+////  P r i v a t e  ////////////////////////////////////////////////////////////////////////////////////
+
+
+    private static final WhitespaceCollapser collapser = new WhitespaceCollapser(); }
 
 
 
