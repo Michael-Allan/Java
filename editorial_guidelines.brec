@@ -107,7 +107,7 @@ Editorial guidelines for Java
               be set to the command directory.
                 - The command directory is where project installations are accessible by their
                   proper paths.  The present project, for example, would be accessible at `Java/`.
-                    : see `^*command directory$` @ http://reluk.ca/project/lexicon.brec
+                    : see `^*command directory$` @ http://reluk.ca/project/glossary.brec
                     \ Keep this lexical reiteration, instructions for basic commands refer here.
             - The dependency is located in the shebang, specifically its references to argument files
               such as `java_arguments`, each formed as a relative path.
