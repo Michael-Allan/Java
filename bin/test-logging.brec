@@ -13,7 +13,7 @@
       or possibly a subpackage of it.
         / The proper package of a project is the Java package that identifies it.
           E.g. use `Breccia.Web.imager` for the Breccia Web imager project.
-            : see `^*proper package` @ http://reluk.ca/project/lexicon.brec
+            : see `^*proper package` @ http://reluk.ca/project/glossary.brec
 
 
     ━━━━━━━━━

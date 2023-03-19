@@ -7,7 +7,7 @@ Installation instructions for the Java programming project
             >+ cd <command directory>/
                 / The command directory is where project installations are accessible by their proper
                   paths.  The present project, for example, will shortly be accessible at `Java/`.
-                    : see `^*command directory$` @ http://reluk.ca/project/lexicon.brec
+                    : see `^*command directory$` @ http://reluk.ca/project/glossary.brec
             >+ git clone http://reluk.ca/var/repo/git/Java.git Java
         3+ Build the software.
             : see http://reluk.ca/project/building/Makeshift/bin/build.brec
