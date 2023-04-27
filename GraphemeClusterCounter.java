@@ -10,6 +10,9 @@ import static Java.Unicode.graphemeClusterPattern;
   */
 public final class GraphemeClusterCounter {
 
+    // Posted at `https://stackoverflow.com/a/74078861/2402790`.
+    // Cf. `https://stackoverflow.com/a/76109241/2402790`.
+
 
     /** Makes a cluster counter with an empty string as the initial input sequence.
       */
@@ -90,4 +93,4 @@ public final class GraphemeClusterCounter {
 
 
 
-                                                   // Copyright © 2021-2022  Michael Allan.  Licence MIT.
+                                                   // Copyright © 2021-2023  Michael Allan.  Licence MIT.
