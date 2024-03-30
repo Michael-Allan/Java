@@ -5,7 +5,7 @@ import java.util.regex.Matcher;
 import static Java.Unicode.graphemeClusterPattern;
 
 
-/** @see <a href='https://unicode.org/reports/tr29/#Grapheme_Cluster_Boundaries'>
+/** @see <a href='http://unicode.org/reports/tr29/#Grapheme_Cluster_Boundaries'>
   *   Grapheme cluster boundaries in Unicode text segmentation</a>
   */
 public final class GraphemeClusterCounter {
