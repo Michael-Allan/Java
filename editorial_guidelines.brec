@@ -129,7 +129,7 @@ Editorial guidelines for Java
                     - Clarity would suffer: one could no longer comment on a particular argument in line.
 
     text blocks
-        - Avoid using them till Emacs (CC Mode or Java Mode Tamed) correctly faces them.
+        - Avoid using them till Emacs (CC Mode or JMT Mode) correctly faces them.
             : see `^*\+ Repair fontification of text blocks.$` @ ~/work/Java/Emacs/notes.brec
             - Meantime they overwork CC Mode, and severely reduce (somehow) the undo capacity.
 
