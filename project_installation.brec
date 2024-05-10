@@ -2,7 +2,7 @@ Installation instructions for the Java programming project
 
     initial set-up
         1+ Ensure Makeshift is installed.
-            : see http://reluk.ca/project/building/Makeshift/
+            : see http://reluk.ca/project/Makeshift/
         2+ Install the files of the present project.
             >+ cd <command directory>/
                 / The command directory is where project installations are accessible by their proper
@@ -10,7 +10,7 @@ Installation instructions for the Java programming project
                     : see `^*command directory$` @ http://reluk.ca/project/glossary.brec
             >+ git clone http://reluk.ca/var/repo/git/Java.git Java
         3+ Build the software.
-            : see http://reluk.ca/project/building/Makeshift/bin/build.brec
+            : see http://reluk.ca/project/Makeshift/bin/build.brec
             >+ build Java class-files
         4+ Test your access to the `test-logging` command.
             >+ Java/bin/test-logging -?
